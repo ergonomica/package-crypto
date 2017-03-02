@@ -17,6 +17,8 @@ def _sha256(string):
     return s.digest()
 
 def md5(env, args, kwargs):
+    """{string:}"""
+    
     # hashing input
     if "string" in kwargs and kwargs["string"] in ["t", "true"]:
         return map(_md5, args)    
@@ -24,6 +26,8 @@ def md5(env, args, kwargs):
         return [_md5(open(x).read()) for x in args]
 
 def sha256(env, args, kwargs):
+    """"""
+    
     # hashing input
     if "string" in kwargs and kwargs["string"] in ["t", "true"]:
         return map(_sha256, args)    
