@@ -17,19 +17,19 @@ def sha256(string):
     return s.digest()
 
 def main(argc):
-    """crypto: various hashing functions.
+    """hash: various hashing functions.
     
     Usage:
-        crypto (md5|sha256) FILE
-        crypto (md5|sha256) --string STRING
+        hash (md5|sha256) FILE
+        hash (md5|sha256) --string STRING
     """
     
     if argc.args['FILE']:
         if argc.args['md5']:
-            return [md5(open(argc.args['FILE']).read()]
+            return md5(open(argc.args['FILE']).read())
 
         elif argc.args['sha256']:
-            return [sha256(open(x).read()]
+            return sha256(open(argc.args['FILE']).read())
 
     elif argc.args['--string']:
         if argc.args['md5']:
