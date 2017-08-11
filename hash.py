@@ -16,7 +16,7 @@ def sha256(string):
     s.update(string)
     return s.digest()
 
-def main(argc):
+def hash(argc):
     """hash: various hashing functions.
     
     Usage:
@@ -37,3 +37,5 @@ def main(argc):
 
         elif argc.args['sha256']:
             return sha256(argc.args['STRING'])
+
+exports = {"hash": hash}
